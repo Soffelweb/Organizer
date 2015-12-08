@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9057" systemVersion="15B42" minimumToolsVersion="Xcode 7.0">
+    <entity name="Events" syncable="YES">
+        <attribute name="due" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="jobs" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Jobs" syncable="YES"/>
+    </entity>
+    <entity name="Jobs" syncable="YES">
+        <attribute name="done" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="order" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <relationship name="tasks" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Tasks" inverseName="job" inverseEntity="Tasks" syncable="YES"/>
+    </entity>
+    <entity name="Tasks" syncable="YES">
+        <attribute name="done" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="order" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <relationship name="job" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Jobs" inverseName="tasks" inverseEntity="Jobs" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Jobs" positionX="-72" positionY="-27" width="128" height="103"/>
+        <element name="Tasks" positionX="-279" positionY="-9" width="128" height="103"/>
+        <element name="Events" positionX="-279" positionY="-99" width="128" height="88"/>
+    </elements>
+</model>
